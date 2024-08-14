@@ -1,0 +1,32 @@
+body{
+    width: 100%;
+    /* overflow: hidden; */
+}
+div{
+    width: 100%;
+}
+img{
+    width: 70%;
+    margin-left: 15%;
+    margin-top: 20%;
+}
+#apply{
+    font-size: 100%;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: bold;
+    width: 20%;
+    margin-left: 37%;
+    text-align: center;
+    border-radius: 15px;
+    color: white;
+    background-color: rgb(1, 33, 91);
+    padding: 3%;
+}
+#apply:hover{
+    font-weight: bold;
+    background-color: rgb(105, 214, 244);
+    color: black;
+}
+a{
+    text-decoration-line: none;
+}
