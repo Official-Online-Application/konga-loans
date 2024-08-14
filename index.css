@@ -1,32 +1,28 @@
-body{
+img{
     width: 100%;
-    /* overflow: hidden; */
+    margin-top: 25%;
+
 }
 div{
-    width: 100%;
-}
-img{
-    width: 70%;
-    margin-left: 15%;
-    margin-top: 20%;
-}
-#apply{
-    font-size: 100%;
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-weight: bold;
-    width: 20%;
-    margin-left: 37%;
     text-align: center;
-    border-radius: 15px;
-    color: white;
-    background-color: rgb(1, 33, 91);
-    padding: 3%;
 }
-#apply:hover{
+p{
+    font-size: 120%;
+    /* font-family:'charm'; */
     font-weight: bold;
-    background-color: rgb(105, 214, 244);
-    color: black;
+    border-radius: 15px;
+    width: 20%;
+    margin-left: 35%;
+    padding: 5%;
+    background-color: rgb(28, 179, 190);
+    text-align: center;
+}
+p:hover{
+    background-color: rgb(235, 187, 27);
+    color: rgb(28, 179, 190);
 }
 a{
-    text-decoration-line: none;
+    background-color: rgb(28, 179, 190);
+    text-decoration: none;
+    color: black;
 }
